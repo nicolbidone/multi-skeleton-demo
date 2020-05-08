@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn_to_elyne.setOnClickListener {
-            startActivity<LoaderViewActivity>()
+            startActivity<ElyneLoaderActivity>()
         }
     }
 }
