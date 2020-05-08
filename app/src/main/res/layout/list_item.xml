@@ -9,53 +9,58 @@
         android:layout_width="@dimen/skeleton_item_pic_width"
         android:layout_height="@dimen/skeleton_item_pic_height"
         android:layout_marginStart="@dimen/skeleton_item_pic_margin_start"
-        app:corners="90"
         android:background="@color/cardview_light_background"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:corners="90"
+        app:layout_constraintBottom_toBottomOf="@+id/skeleton_item_description"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/skeleton_item_title" />
 
     <com.elyeproj.loaderviewlibrary.LoaderTextView
         android:id="@+id/skeleton_item_title"
         android:layout_width="@dimen/skeleton_item_title_width"
-        android:layout_height="@dimen/skeleton_item_title_height"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/skeleton_item_title_margin_start"
-        android:layout_marginTop="@dimen/skeleton_item_title_margin_top"
-        app:corners="16"
         android:background="@color/cardview_light_background"
+        app:corners="16"
+        app:height_weight="0.5"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@+id/skeleton_item_description"
         app:layout_constraintStart_toEndOf="@id/skeleton_item_pic"
-        app:layout_constraintTop_toTopOf="@id/skeleton_item_pic" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.elyeproj.loaderviewlibrary.LoaderTextView
         android:id="@+id/skeleton_item_description"
         android:layout_width="@dimen/skeleton_item_description_width"
-        android:layout_height="@dimen/skeleton_item_description_height"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/skeleton_item_description_margin_start"
-        android:layout_marginTop="@dimen/skeleton_item_description_margin_top"
         android:layout_marginBottom="@dimen/skeleton_item_description_margin_bottom"
-        app:corners="16"
         android:background="@color/cardview_light_background"
-        app:layout_constraintBottom_toBottomOf="@id/skeleton_item_pic"
+        app:corners="16"
+        app:height_weight="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/loaderTextView"
         app:layout_constraintStart_toEndOf="@id/skeleton_item_pic"
-        app:layout_constraintTop_toBottomOf="@id/skeleton_item_title" />
+        app:layout_constraintTop_toBottomOf="@+id/skeleton_item_title" />
 
     <com.elyeproj.loaderviewlibrary.LoaderTextView
         android:id="@+id/skeleton_item_value"
         android:layout_width="@dimen/skeleton_item_value_width"
-        android:layout_height="@dimen/skeleton_item_value_height"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/skeleton_item_value_margin_top"
         android:layout_marginEnd="@dimen/skeleton_item_value_margin_end"
-        app:corners="16"
         android:background="@color/cardview_light_background"
+        app:corners="16"
+        app:height_weight="0.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/skeleton_item_pic" />
 
     <com.elyeproj.loaderviewlibrary.LoaderTextView
+        android:id="@+id/loaderTextView"
         android:layout_width="0dp"
         android:layout_height="@dimen/default_min_size"
         android:layout_marginHorizontal="@dimen/skeleton_item_divisor_margin_end"
-        app:corners="16"
         android:background="@color/cardview_light_background"
+        app:corners="16"
+        app:height_weight="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/skeleton_item_pic" />

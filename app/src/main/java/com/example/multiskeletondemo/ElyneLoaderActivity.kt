@@ -14,6 +14,7 @@ import kotlinx.coroutines.launch
 class ElyneLoaderActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
+    private var data = mutableListOf<String?>(null, null, null, null, null, null, null, null, null, null)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,10 +35,13 @@ class ElyneLoaderActivity : AppCompatActivity() {
         tv_home_quick_access_sell_with_QR.text = getString(R.string.home_quick_access_sell_with_qr)
         tv_home_quick_access_sell_with_mPOS.text = getString(R.string.home_quick_access_sell_with_mobile_point_of_sale)
         tv_home_quick_access_sell_with_link.text = getString(R.string.home_quick_access_sell_with_payment_button)
+
+        data[2] = "dog"
+        recyclerView.adapter?.notifyItemChanged(2)
     }
 
     private fun initRecyclerView() {
-        val adapter = RecyclerViewAdapter {}
+        val adapter = RecyclerViewAdapter(data, {})
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
