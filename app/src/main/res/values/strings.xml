@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Multi Skeleton Demo</string>
+    <string name="home_quick_access_sell_with_qr">Vender con QR</string>
+    <string name="home_quick_access_sell_with_payment_button">Vender con bot\'on de pago</string>
+    <string name="home_quick_access_sell_with_mobile_point_of_sale">Vender con mPos</string>
 </resources>
