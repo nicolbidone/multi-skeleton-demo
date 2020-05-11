@@ -8,6 +8,7 @@ abstract class ViewState<V : View>(var view: V) {
     var background: Drawable? = null
     @JvmField
     protected var darker = false
+
     protected open fun restore() {}
     protected fun restoreBackground() {
         view.setBackgroundDrawable(background)
@@ -18,10 +19,9 @@ abstract class ViewState<V : View>(var view: V) {
     }
 
     open fun start(fadein: Boolean, radius: Int) {
-        val greyDrawable =
-            GreyDrawable()
+        val greyDrawable = GreyDrawable()
         view.setBackgroundDrawable(greyDrawable)
-        greyDrawable.isFadein = fadein
+        greyDrawable.isFadeIn = fadein
         greyDrawable.setCornerRadious(radius)
         greyDrawable.start(view, darker)
     }

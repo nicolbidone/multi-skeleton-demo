@@ -12,7 +12,7 @@ import com.example.multiskeletondemo.fiftyshadesof.viewstate.ViewState
 import java.util.*
 
 class FiftyShadesOf(private val context: Context?) {
-    private val viewsState: HashMap<View, ViewState<*>>
+    private val viewsState: HashMap<View, ViewState<*>> = HashMap()
     private var fadein = true
     private var radius = 0
     private var started = false
@@ -36,16 +36,19 @@ class FiftyShadesOf(private val context: Context?) {
     }
 
     private fun add(view: View) {
-        if (view is TextView) {
-            viewsState[view] = TextViewState(view)
-        } else if (view is ImageView) {
-            viewsState[view] = ImageViewState(view)
-        } else if (view is ViewGroup) {
-            val viewGroup = view
-            val count = viewGroup.childCount
-            for (i in 0 until count) {
-                val child = viewGroup.getChildAt(i)
-                add(child)
+        when (view) {
+            is TextView -> {
+                viewsState[view] = TextViewState(view)
+            }
+            is ImageView -> {
+                viewsState[view] = ImageViewState(view)
+            }
+            is ViewGroup -> {
+                val count = view.childCount
+                for (i in 0 until count) {
+                    val child = view.getChildAt(i)
+                    add(child)
+                }
             }
         }
     }
@@ -92,7 +95,4 @@ class FiftyShadesOf(private val context: Context?) {
         }
     }
 
-    init {
-        viewsState = HashMap()
-    }
 }

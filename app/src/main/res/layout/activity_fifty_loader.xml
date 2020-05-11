@@ -19,7 +19,6 @@
         android:id="@+id/tv_loaderImageView2"
         android:layout_width="@dimen/circle_size"
         android:layout_height="@dimen/circle_size"
-        app:corners="90"
         app:layout_constraintEnd_toEndOf="@+id/tv_tv_home_quick_access_sell_with_mPOS"
         app:layout_constraintStart_toStartOf="@+id/tv_tv_home_quick_access_sell_with_mPOS"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +27,6 @@
         android:id="@+id/tv_loaderImageView3"
         android:layout_width="@dimen/circle_size"
         android:layout_height="@dimen/circle_size"
-        app:corners="90"
         app:layout_constraintEnd_toEndOf="@+id/tv_tv_home_quick_access_sell_with_link"
         app:layout_constraintStart_toStartOf="@+id/tv_tv_home_quick_access_sell_with_link"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,7 +51,6 @@
         android:enabled="false"
         android:paddingHorizontal="@dimen/home_quick_access_padding_start"
         android:paddingTop="@dimen/home_quick_access_padding_top"
-        app:corners="16"
         app:layout_constraintEnd_toStartOf="@+id/tv_tv_home_quick_access_sell_with_link"
         app:layout_constraintStart_toEndOf="@+id/tv_tv_home_quick_access_sell_with_QR"
         app:layout_constraintTop_toBottomOf="@+id/tv_loaderImageView" />
@@ -65,7 +62,6 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/home_quick_access_padding_start"
         android:paddingTop="@dimen/home_quick_access_padding_top"
-        app:corners="16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_tv_home_quick_access_sell_with_mPOS"
         app:layout_constraintTop_toBottomOf="@+id/tv_loaderImageView" />

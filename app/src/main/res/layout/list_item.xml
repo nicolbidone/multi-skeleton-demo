@@ -4,54 +4,49 @@
     android:layout_width="match_parent"
     android:layout_height="64dp">
 
-    <View
+    <ImageView
         android:id="@+id/skeleton_item_pic"
         android:layout_width="@dimen/skeleton_item_pic_width"
         android:layout_height="@dimen/skeleton_item_pic_height"
         android:layout_marginStart="@dimen/skeleton_item_pic_margin_start"
-        android:background="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
+    <TextView
         android:id="@+id/skeleton_item_title"
         android:layout_width="@dimen/skeleton_item_title_width"
         android:layout_height="@dimen/skeleton_item_title_height"
         android:layout_marginStart="@dimen/skeleton_item_title_margin_start"
         android:layout_marginTop="@dimen/skeleton_item_title_margin_top"
-        android:background="@color/colorAccent"
         app:layout_constraintStart_toEndOf="@id/skeleton_item_pic"
         app:layout_constraintTop_toTopOf="@id/skeleton_item_pic" />
 
-    <View
+    <TextView
         android:id="@+id/skeleton_item_description"
         android:layout_width="@dimen/skeleton_item_description_width"
         android:layout_height="@dimen/skeleton_item_description_height"
         android:layout_marginStart="@dimen/skeleton_item_description_margin_start"
         android:layout_marginTop="@dimen/skeleton_item_description_margin_top"
         android:layout_marginBottom="@dimen/skeleton_item_description_margin_bottom"
-        android:background="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="@id/skeleton_item_pic"
         app:layout_constraintStart_toEndOf="@id/skeleton_item_pic"
         app:layout_constraintTop_toBottomOf="@id/skeleton_item_title" />
 
-    <View
+    <TextView
         android:id="@+id/skeleton_item_value"
         android:layout_width="@dimen/skeleton_item_value_width"
         android:layout_height="@dimen/skeleton_item_value_height"
         android:layout_marginTop="@dimen/skeleton_item_value_margin_top"
         android:layout_marginEnd="@dimen/skeleton_item_value_margin_end"
-        android:background="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/skeleton_item_pic" />
 
-    <View
+    <TextView
         android:layout_width="0dp"
         android:layout_height="@dimen/default_min_size"
         android:layout_marginStart="@dimen/skeleton_item_divisor_margin_start"
         android:layout_marginEnd="@dimen/skeleton_item_divisor_margin_end"
-        android:background="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/skeleton_item_pic" />

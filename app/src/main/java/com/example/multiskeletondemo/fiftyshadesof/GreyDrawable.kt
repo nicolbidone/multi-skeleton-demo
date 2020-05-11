@@ -10,10 +10,10 @@ import android.view.animation.LinearInterpolator
 import java.lang.ref.WeakReference
 
 class GreyDrawable : Drawable() {
-    var isFadein = false
+    var isFadeIn = false
     var grayColor = DEFAULT_GREY
     var valueAnimator: ValueAnimator? = null
-    var paint: Paint
+    var paint: Paint = Paint()
     var cornersRadius = 0
     var viewWeakReference: WeakReference<View>? = null
     override fun draw(canvas: Canvas) {
@@ -44,11 +44,11 @@ class GreyDrawable : Drawable() {
         val darkerGrey =
             if (darker) DARKER_GREY_BOLD else DARKER_GREY
         valueAnimator = ValueAnimator.ofInt(defaultGrey, darkerGrey)
-        valueAnimator?.setRepeatCount(ObjectAnimator.INFINITE)
-        valueAnimator?.setDuration(DURATION.toLong())
+        valueAnimator?.repeatCount = ObjectAnimator.INFINITE
+        valueAnimator?.duration = DURATION.toLong()
         valueAnimator?.setEvaluator(ArgbEvaluator())
-        valueAnimator?.setRepeatMode(ValueAnimator.REVERSE)
-        valueAnimator?.setInterpolator(LinearInterpolator())
+        valueAnimator?.repeatMode = ValueAnimator.REVERSE
+        valueAnimator?.interpolator = LinearInterpolator()
         valueAnimator?.addUpdateListener(AnimatorUpdateListener { valueAnimator ->
             grayColor = valueAnimator?.animatedValue as Int
             val v = viewWeakReference!!.get()
@@ -63,14 +63,14 @@ class GreyDrawable : Drawable() {
 
     fun stop(callback: Callback?) {
         valueAnimator!!.cancel()
-        if (isFadein) {
+        if (isFadeIn) {
             stopFadeIn(callback)
         } else {
             stopGray(callback)
         }
     }
 
-    fun stopFadeIn(callback: Callback?) {
+    private fun stopFadeIn(callback: Callback?) {
         if (callback != null) {
             val v = viewWeakReference!!.get()
             if (v != null) {
@@ -95,7 +95,7 @@ class GreyDrawable : Drawable() {
         }
     }
 
-    fun stopGray(callback: Callback?) {
+    private fun stopGray(callback: Callback?) {
         val emptyColor = Color.argb(
             0,
             Color.red(grayColor),
@@ -103,9 +103,9 @@ class GreyDrawable : Drawable() {
             Color.blue(grayColor)
         )
         valueAnimator = ValueAnimator.ofInt(grayColor, emptyColor)
-        valueAnimator?.setDuration(STOP_DURATION.toLong())
+        valueAnimator?.duration = STOP_DURATION.toLong()
         valueAnimator?.setEvaluator(ArgbEvaluator())
-        valueAnimator?.setInterpolator(AccelerateInterpolator())
+        valueAnimator?.interpolator = AccelerateInterpolator()
         valueAnimator?.addUpdateListener(AnimatorUpdateListener { valueAnimator ->
             grayColor = valueAnimator?.animatedValue as Int
             val v = viewWeakReference!!.get()
@@ -127,8 +127,8 @@ class GreyDrawable : Drawable() {
                 callback?.onFadeOutFinished()
             }
         })
-        valueAnimator?.setStartDelay(50)
-        valueAnimator?.setDuration(400)
+        valueAnimator?.startDelay = 50
+        valueAnimator?.duration = 400
         valueAnimator?.start()
         callback?.onFadeOutStarted()
     }
@@ -147,7 +147,4 @@ class GreyDrawable : Drawable() {
         const val STOP_DURATION = 200
     }
 
-    init {
-        paint = Paint()
-    }
 }
