@@ -13,5 +13,8 @@ class MainActivity : AppCompatActivity() {
         btn_to_fifty.setOnClickListener {
             startActivity<FiftyLoaderActivity>()
         }
+        btn_to_elyne.setOnClickListener {
+            startActivity<ElyneLoaderActivity>()
+        }
     }
 }

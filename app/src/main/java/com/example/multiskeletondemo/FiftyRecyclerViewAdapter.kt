@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.multiskeletondemo.fiftyshadesof.FiftyShadesOf
-import kotlinx.android.synthetic.main.list_item.view.*
+import kotlinx.android.synthetic.main.fifty_list_item.view.*
 
 class FiftyRecyclerViewAdapter(
     private val shade: FiftyShadesOf,
@@ -16,7 +16,7 @@ class FiftyRecyclerViewAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ForecastViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.list_item,
+                R.layout.fifty_list_item,
                 parent,
                 false
             )

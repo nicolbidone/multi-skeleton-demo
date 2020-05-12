@@ -7,64 +7,83 @@
     android:paddingTop="@dimen/home_content_padding_sides"
     android:paddingEnd="@dimen/home_content_padding_sides">
 
-    <TextView
+    <com.elyeproj.loaderviewlibrary.LoaderImageView
+        android:id="@+id/loaderImageView"
+        android:layout_width="@dimen/circle_size"
+        android:layout_height="@dimen/circle_size"
+        app:corners="90"
+        app:layout_constraintEnd_toEndOf="@+id/tv_home_quick_access_sell_with_QR"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_quick_access_sell_with_QR"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.elyeproj.loaderviewlibrary.LoaderImageView
+        android:id="@+id/loaderImageView2"
+        android:layout_width="@dimen/circle_size"
+        android:layout_height="@dimen/circle_size"
+        app:corners="90"
+        app:layout_constraintEnd_toEndOf="@+id/tv_home_quick_access_sell_with_mPOS"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_quick_access_sell_with_mPOS"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.elyeproj.loaderviewlibrary.LoaderImageView
+        android:id="@+id/loaderImageView3"
+        android:layout_width="@dimen/circle_size"
+        android:layout_height="@dimen/circle_size"
+        app:corners="90"
+        app:layout_constraintEnd_toEndOf="@+id/tv_home_quick_access_sell_with_link"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_quick_access_sell_with_link"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.elyeproj.loaderviewlibrary.LoaderTextView
         android:id="@+id/tv_home_quick_access_sell_with_QR"
         style="@style/textQuickAccess"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:drawableTop="@drawable/ic_launcher_background"
         android:paddingHorizontal="@dimen/home_quick_access_padding_start"
         android:paddingTop="@dimen/home_quick_access_padding_top"
-        android:text="@string/home_quick_access_sell_with_qr"
+        app:corners="16"
         app:layout_constraintEnd_toStartOf="@+id/tv_home_quick_access_sell_with_mPOS"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/loaderImageView" />
 
-    <TextView
+    <com.elyeproj.loaderviewlibrary.LoaderTextView
         android:id="@+id/tv_home_quick_access_sell_with_mPOS"
         style="@style/textQuickAccess"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:drawableTop="@drawable/ic_launcher_background"
         android:enabled="false"
         android:paddingHorizontal="@dimen/home_quick_access_padding_start"
         android:paddingTop="@dimen/home_quick_access_padding_top"
-        android:text="@string/home_quick_access_sell_with_mobile_point_of_sale"
+        app:corners="16"
         app:layout_constraintEnd_toStartOf="@+id/tv_home_quick_access_sell_with_link"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv_home_quick_access_sell_with_QR"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/loaderImageView" />
 
-    <TextView
+    <com.elyeproj.loaderviewlibrary.LoaderTextView
         android:id="@+id/tv_home_quick_access_sell_with_link"
         style="@style/textQuickAccess"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:drawableTop="@drawable/ic_launcher_background"
         android:paddingHorizontal="@dimen/home_quick_access_padding_start"
         android:paddingTop="@dimen/home_quick_access_padding_top"
-        android:text="@string/home_quick_access_sell_with_payment_button"
+        app:corners="16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv_home_quick_access_sell_with_mPOS"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/loaderImageView" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginVertical="@dimen/home_top_content_margin_sides"
+        android:layout_marginBottom="@dimen/home_top_content_margin_sides"
+        android:layout_marginTop="50dp"
         android:clipToPadding="false"
         app:cardCornerRadius="@dimen/default_elevation"
         app:cardPreventCornerOverlap="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_home_quick_access_sell_with_link">
+        app:layout_constraintTop_toTopOf="@+id/tv_home_quick_access_sell_with_mPOS">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
