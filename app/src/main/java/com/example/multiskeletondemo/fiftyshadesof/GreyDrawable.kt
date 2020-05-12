@@ -34,7 +34,7 @@ class GreyDrawable : Drawable() {
 
     override fun setColorFilter(colorFilter: ColorFilter?) {}
     override fun getOpacity(): Int {
-        return 255
+        return PixelFormat.OPAQUE
     }
 
     fun start(view: View, darker: Boolean) {
@@ -51,18 +51,18 @@ class GreyDrawable : Drawable() {
         valueAnimator?.interpolator = LinearInterpolator()
         valueAnimator?.addUpdateListener(AnimatorUpdateListener { valueAnimator ->
             grayColor = valueAnimator?.animatedValue as Int
-            val v = viewWeakReference!!.get()
+            val v = viewWeakReference?.get()
             v?.invalidate()
         })
         valueAnimator?.start()
     }
 
     fun cancel() {
-        valueAnimator!!.cancel()
+        valueAnimator?.cancel()
     }
 
     fun stop(callback: Callback?) {
-        valueAnimator!!.cancel()
+        valueAnimator?.cancel()
         if (isFadeIn) {
             stopFadeIn(callback)
         } else {
@@ -72,7 +72,7 @@ class GreyDrawable : Drawable() {
 
     private fun stopFadeIn(callback: Callback?) {
         if (callback != null) {
-            val v = viewWeakReference!!.get()
+            val v = viewWeakReference?.get()
             if (v != null) {
                 val alphaAnimator =
                     ObjectAnimator.ofFloat(v, View.ALPHA, 0f).setDuration(400)
@@ -80,7 +80,7 @@ class GreyDrawable : Drawable() {
                     override fun onAnimationEnd(animation: Animator) {
                         callback.onFadeOutStarted()
                         callback.onFadeOutFinished()
-                        val v = viewWeakReference!!.get()
+                        val v = viewWeakReference?.get()
                         if (v != null) {
                             ObjectAnimator.ofFloat(v, View.ALPHA, 1f).start()
                         }
@@ -108,14 +108,14 @@ class GreyDrawable : Drawable() {
         valueAnimator?.interpolator = AccelerateInterpolator()
         valueAnimator?.addUpdateListener(AnimatorUpdateListener { valueAnimator ->
             grayColor = valueAnimator?.animatedValue as Int
-            val v = viewWeakReference!!.get()
+            val v = viewWeakReference?.get()
             v?.invalidate()
         })
         valueAnimator?.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator) {
                 if (callback != null) {
                     callback.onFadeOutFinished()
-                    val v = viewWeakReference!!.get()
+                    val v = viewWeakReference?.get()
                     if (v != null) {
                         ObjectAnimator.ofFloat(v, View.ALPHA, 1f).start()
                     }

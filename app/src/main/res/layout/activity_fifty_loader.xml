@@ -8,63 +8,63 @@
     android:paddingEnd="@dimen/home_content_padding_sides">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/tv_loaderImageView"
+        android:id="@+id/iv_activity_fifty_loader_left"
         android:layout_width="@dimen/circle_size"
         android:layout_height="@dimen/circle_size"
-        app:layout_constraintEnd_toEndOf="@+id/tv_tv_home_quick_access_sell_with_QR"
-        app:layout_constraintStart_toStartOf="@+id/tv_tv_home_quick_access_sell_with_QR"
+        app:layout_constraintEnd_toEndOf="@+id/tv_activity_fifty_loader_left"
+        app:layout_constraintStart_toStartOf="@+id/tv_activity_fifty_loader_left"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/tv_loaderImageView2"
+        android:id="@+id/iv_activity_fifty_loader_center"
         android:layout_width="@dimen/circle_size"
         android:layout_height="@dimen/circle_size"
-        app:layout_constraintEnd_toEndOf="@+id/tv_tv_home_quick_access_sell_with_mPOS"
-        app:layout_constraintStart_toStartOf="@+id/tv_tv_home_quick_access_sell_with_mPOS"
+        app:layout_constraintEnd_toEndOf="@+id/tv_activity_fifty_loader_center"
+        app:layout_constraintStart_toStartOf="@+id/tv_activity_fifty_loader_center"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/tv_loaderImageView3"
+        android:id="@+id/iv_activity_fifty_loader_right"
         android:layout_width="@dimen/circle_size"
         android:layout_height="@dimen/circle_size"
-        app:layout_constraintEnd_toEndOf="@+id/tv_tv_home_quick_access_sell_with_link"
-        app:layout_constraintStart_toStartOf="@+id/tv_tv_home_quick_access_sell_with_link"
+        app:layout_constraintEnd_toEndOf="@+id/tv_activity_fifty_loader_right"
+        app:layout_constraintStart_toStartOf="@+id/tv_activity_fifty_loader_right"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_tv_home_quick_access_sell_with_QR"
+        android:id="@+id/tv_activity_fifty_loader_left"
         style="@style/textQuickAccess"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/home_quick_access_padding_start"
         android:paddingTop="@dimen/home_quick_access_padding_top"
-        app:layout_constraintEnd_toStartOf="@+id/tv_tv_home_quick_access_sell_with_mPOS"
+        app:layout_constraintEnd_toStartOf="@+id/tv_activity_fifty_loader_center"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_loaderImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_activity_fifty_loader_left" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_tv_home_quick_access_sell_with_mPOS"
+        android:id="@+id/tv_activity_fifty_loader_center"
         style="@style/textQuickAccess"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:enabled="false"
         android:paddingHorizontal="@dimen/home_quick_access_padding_start"
         android:paddingTop="@dimen/home_quick_access_padding_top"
-        app:layout_constraintEnd_toStartOf="@+id/tv_tv_home_quick_access_sell_with_link"
-        app:layout_constraintStart_toEndOf="@+id/tv_tv_home_quick_access_sell_with_QR"
-        app:layout_constraintTop_toBottomOf="@+id/tv_loaderImageView" />
+        app:layout_constraintEnd_toStartOf="@+id/tv_activity_fifty_loader_right"
+        app:layout_constraintStart_toEndOf="@+id/tv_activity_fifty_loader_left"
+        app:layout_constraintTop_toBottomOf="@+id/iv_activity_fifty_loader_left" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_tv_home_quick_access_sell_with_link"
+        android:id="@+id/tv_activity_fifty_loader_right"
         style="@style/textQuickAccess"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/home_quick_access_padding_start"
         android:paddingTop="@dimen/home_quick_access_padding_top"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_tv_home_quick_access_sell_with_mPOS"
-        app:layout_constraintTop_toBottomOf="@+id/tv_loaderImageView" />
+        app:layout_constraintStart_toEndOf="@+id/tv_activity_fifty_loader_center"
+        app:layout_constraintTop_toBottomOf="@+id/iv_activity_fifty_loader_left" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -76,14 +76,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tv_home_quick_access_sell_with_mPOS">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        app:layout_constraintTop_toBottomOf="@+id/tv_activity_fifty_loader_center">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/fl_rv_movement_list"
+                android:id="@+id/rv_activity_fifty_loader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -92,6 +88,5 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

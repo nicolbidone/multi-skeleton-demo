@@ -16,29 +16,28 @@
     <TextView
         android:id="@+id/skeleton_item_title"
         android:layout_width="@dimen/skeleton_item_title_width"
-        android:layout_height="@dimen/skeleton_item_title_height"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/skeleton_item_title_margin_start"
-        android:layout_marginTop="@dimen/skeleton_item_title_margin_top"
+        app:layout_constraintBottom_toTopOf="@id/skeleton_item_description"
         app:layout_constraintStart_toEndOf="@id/skeleton_item_pic"
-        app:layout_constraintTop_toTopOf="@id/skeleton_item_pic" />
+        app:layout_constraintTop_toTopOf="@+id/skeleton_item_pic"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/skeleton_item_description"
         android:layout_width="@dimen/skeleton_item_description_width"
-        android:layout_height="@dimen/skeleton_item_description_height"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/skeleton_item_description_margin_start"
-        android:layout_marginTop="@dimen/skeleton_item_description_margin_top"
-        android:layout_marginBottom="@dimen/skeleton_item_description_margin_bottom"
-        app:layout_constraintBottom_toBottomOf="@id/skeleton_item_pic"
+        app:layout_constraintBottom_toBottomOf="@+id/skeleton_item_pic"
         app:layout_constraintStart_toEndOf="@id/skeleton_item_pic"
-        app:layout_constraintTop_toBottomOf="@id/skeleton_item_title" />
+        app:layout_constraintTop_toBottomOf="@+id/skeleton_item_title" />
 
     <TextView
         android:id="@+id/skeleton_item_value"
         android:layout_width="@dimen/skeleton_item_value_width"
         android:layout_height="@dimen/skeleton_item_value_height"
-        android:layout_marginTop="@dimen/skeleton_item_value_margin_top"
         android:layout_marginEnd="@dimen/skeleton_item_value_margin_end"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/skeleton_item_pic" />
 

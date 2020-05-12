@@ -89,6 +89,19 @@ class FiftyShadesOf(private val context: Context?) {
         return this
     }
 
+    fun stopAnd(function: () -> Unit): FiftyShadesOf {
+        var count = viewsState.values.size-1
+        if (started) {
+            for (viewState in viewsState.values) {
+                viewState.stopAnd() {
+                    if (count-- == 0) function()
+                }
+            }
+            started = false
+        }
+        return this
+    }
+
     companion object {
         fun with(context: Context?): FiftyShadesOf {
             return FiftyShadesOf(context)

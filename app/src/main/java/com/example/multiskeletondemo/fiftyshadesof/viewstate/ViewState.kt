@@ -42,4 +42,22 @@ abstract class ViewState<V : View>(var view: V) {
             restore()
         }
     }
+
+    fun stopAnd(function: () -> Unit) {
+        val drawable = view.background
+        if (drawable is GreyDrawable) {
+            drawable.stop(object : GreyDrawable.Callback {
+                override fun onFadeOutStarted() {
+                    restore()
+                }
+
+                override fun onFadeOutFinished() {
+                    restoreBackground()
+                    function()
+                }
+            })
+        } else {
+            restore()
+        }
+    }
 }
