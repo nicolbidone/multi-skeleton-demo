@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 class ElyneLoaderActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private var data = mutableListOf<String?>(null, null, null, null, null, null, null, null, null, null)
+    private var data = mutableListOf<String?>(null, null, null, null, null, null, null, null)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +41,7 @@ class ElyneLoaderActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        val adapter = RecyclerViewAdapter(data, {})
+        val adapter = ElyneRecyclerViewAdapter(data)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
